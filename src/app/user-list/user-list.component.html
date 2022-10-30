@@ -1,0 +1,19 @@
+<div class="container">    
+    <h1> product-list </h1>  
+    <table class="table table-striped">  
+      <thead>  
+          <tr>  
+            <th>ID</th>  
+            <th>Name</th>  
+            <th>Email</th>    
+          </tr>  
+      </thead>  
+      <tbody>  
+        <tr *ngFor="let product of userList">  
+          <td>{{ product.id }}</td>  
+          <td>{{ product.name }}</td>  
+          <td>{{ product.email }}</td>  
+        </tr>  
+      </tbody>  
+    </table>  
+  </div>  
