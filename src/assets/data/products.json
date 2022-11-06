@@ -5,17 +5,17 @@
         "price": 1001
     },
     {
-        "id": 1,
+        "id": 2,
         "name": "Mac 2",
         "price": 1002
     },
     {
-        "id": 1,
+        "id": 3,
         "name": "Mac 3",
         "price": 1003
     },
     {
-        "id": 1,
+        "id": 4,
         "name": "Mac 4",
         "price": 1004
     }

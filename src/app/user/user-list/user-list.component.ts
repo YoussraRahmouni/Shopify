@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import userData from '../../assets/data/users.json';
+import userData from '../../../assets/data/users.json';
+import { User } from '../../user';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-user-list',
@@ -8,10 +11,15 @@ import userData from '../../assets/data/users.json';
 })
 export class UserListComponent implements OnInit {
 
+  faInfoCircle = faInfoCircle;
   constructor() { }
 
   ngOnInit(): void {
   }
   
-  userList: any[] = userData;
+  userList: User[] = userData;
+  
+  onSelect(user: User): void {
+
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import productData from '../../assets/data/products.json';
+import productData from '../../../assets/data/products.json';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -8,6 +9,8 @@ import productData from '../../assets/data/products.json';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+  
+  faInfoCircle = faInfoCircle;
 
   constructor() { }
 

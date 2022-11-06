@@ -6,13 +6,13 @@
         "date": "2022-10-30"
     },
     {
-        "id": 1,
+        "id": 2,
         "user": "user2",
         "productID": 2,
         "date": "2022-10-31"
     },
     {
-        "id": 1,
+        "id": 3,
         "user": "user3",
         "productID": 3,
         "date": "2022-10-23"
