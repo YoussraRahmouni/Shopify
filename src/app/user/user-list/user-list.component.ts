@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import userData from '../../../assets/data/users.json';
-import { User } from '../../user';
+import { User } from '../../models/user';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -12,14 +12,11 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 export class UserListComponent implements OnInit {
 
   faInfoCircle = faInfoCircle;
-  constructor() { }
+  userList: User[] = [];
+  constructor(private userService : UserService) { }
 
   ngOnInit(): void {
+    this.userList=this.userService.getUsers();
   }
   
-  userList: User[] = userData;
-  
-  onSelect(user: User): void {
-
-  }
 }

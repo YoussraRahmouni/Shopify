@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import orderData from '../../../assets/data/orders.json';
-import {Order} from '../../order';
+import {Order} from '../../models/order';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'app-order-list',
@@ -11,12 +11,12 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 export class OrderListComponent implements OnInit {
 
   faInfoCircle = faInfoCircle;
+  orderList: Order[] = [];
 
-  constructor() { }
+  constructor(private orderService : OrderService) { }
 
   ngOnInit(): void {
+    this.orderList = this.orderService.getOrders();
   }
-  
-  orderList: Order[] = orderData;
 
 }
