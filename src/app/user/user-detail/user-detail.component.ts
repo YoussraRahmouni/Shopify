@@ -13,14 +13,17 @@ export class UserDetailComponent implements OnInit {
 
   user?: User;
   userId?: any;
-  userList: User[] = [];
+  //userList: User[] = [];
 
   constructor(private activatedRoute : ActivatedRoute, private userService : UserService) { }
 
   ngOnInit(): void {
-    this.userList = this.userService.getUsers();
     this.userId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.user = this.userList.find( user => user.id == this.userId);
+    this.userService.getUsers()
+      .subscribe((data: User[]) => this.user = data.find( user => user.id == this.userId));
+    // this.userList = this.userService.getUsers();
+    // this.userId = this.activatedRoute.snapshot.paramMap.get('id');
+    // this.user = this.userList.find( user => user.id == this.userId);
   }
   
 

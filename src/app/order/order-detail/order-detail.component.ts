@@ -19,9 +19,12 @@ export class OrderDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.orderList = this.orderService.getOrders();
     this.orderId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.order = this.orderList.find(order => order.id == this.orderId);
+    this.orderService.getOrders()
+      .subscribe((data: Order[]) => this.order = data.find( order => order.id == this.orderId));
+    // this.orderList = this.orderService.getOrders();
+    // this.orderId = this.activatedRoute.snapshot.paramMap.get('id');
+    // this.order = this.orderList.find(order => order.id == this.orderId);
   }
 
 }

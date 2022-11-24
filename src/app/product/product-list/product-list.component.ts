@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { Product } from 'src/app/models/product';
 
 
 @Component({
@@ -11,12 +12,13 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 export class ProductListComponent implements OnInit {
   
   faInfoCircle = faInfoCircle;
-  productList:any[] = []
+  productList:Product[] = []
 
   constructor(private productService : ProductService) { }
 
   ngOnInit(): void {
-    this.productList = this.productService.getProducts();
+    this.productService.getProducts()
+      .subscribe((data: Product[]) => this.productList = data);
   }
   
 }

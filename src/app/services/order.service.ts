@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import orderData from '../../assets/data/orders.json';
+//import orderData from '../../assets/data/orders.json';
 import { Order } from '../models/order';
 
 @Injectable({
@@ -7,8 +8,12 @@ import { Order } from '../models/order';
 })
 export class OrderService {
 
-  constructor() { }
-  getOrders(): Order[]{
-    return orderData;
-  } 
+  orderUrl = '../../assets/data/orders.json';
+  constructor(private http: HttpClient) { }
+  // getOrders(): Order[]{
+  //   return orderData;
+  // } 
+  getOrders() {
+    return this.http.get<Order[]>(this.orderUrl);
+  }
 }
