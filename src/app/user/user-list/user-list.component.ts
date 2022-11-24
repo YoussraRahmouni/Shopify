@@ -4,6 +4,7 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { UserService } from 'src/app/services/user.service';
 
 
+
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
@@ -12,11 +13,13 @@ import { UserService } from 'src/app/services/user.service';
 export class UserListComponent implements OnInit {
 
   faInfoCircle = faInfoCircle;
-  userList: User[] = [];
+  userList : User[] = [];
   constructor(private userService : UserService) { }
 
   ngOnInit(): void {
-    this.userList=this.userService.getUsers();
+    //this.userList=this.userService.getUsers();
+    this.userService.getUsers()
+      .subscribe((data: User[]) => this.userList = data);
   }
   
 }
