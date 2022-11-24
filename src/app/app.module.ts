@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -11,6 +12,7 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { OrderDetailComponent } from './order/order-detail/order-detail.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ContactComponent } from './contact/contact.component';
 //ng add @fortawesome/angular-fontawesome@0.11 to add font package
 
 
@@ -24,11 +26,13 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
     UserDetailComponent,
     OrderDetailComponent,
     ProductDetailComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

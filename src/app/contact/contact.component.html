@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>
+        Contact Form
+    </h1>
+    <div *ngIf="emptyField" class="alert alert-danger" role="alert">Both email and message fields must be entered</div>
+
+    <div class='form-horizontal'>
+        <div class="form-group">
+          <label for="emailField">Email address</label>
+          <input type="email" class="form-control" id="emailField" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="email">
+        </div>
+        <div class="form-group">
+          <label for="messageField">Message</label>
+          <textarea class="form-control" id="messageField" rows="4" [(ngModel)]="message"></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" (click)="send()">Send</button>
+        </div>
+    </div>
+    
+    <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display' : displayModal}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Contact</h4>
+                    <button type="button" class="close" aria-label="Close" (click)="closeModal()"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <p>Your message has been sent successfully !</p>
+                    <div>Email : {{email}}</div>
+                    <div>Message : {{message}}</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" (click)="closeModal()" >Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
